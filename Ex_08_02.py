@@ -6,15 +6,17 @@
 ознайомитися з модулем shelve (https://docs.python.org/3/library/shelve.html),
 який у даному випадку буде дуже зручним та спростить виконання завдання.
 """
+import  shelve
 
 my_lib = {}
 while True:
-    print("choose what to do - 1) add items, 2) search by name, 3) show all")
+    print("choose what to do:\n1) add items:\n2) search by name\n3) show all")
     option = input('choose options: ')
     if option == '1':
         while True:
             big_url = input('введіть полний URL: ')
             if big_url:
+                print('Єнтер для закінчення вводу')
                 name = input('введіть назву: ')
                 my_lib[name] = big_url
             else:
@@ -22,7 +24,7 @@ while True:
                 break
     elif option == '2':
         print('what to search?')
-        search_name = input("what name?")
+        search_name = input("what name? ")
         if my_lib[search_name]:
             print(my_lib[search_name])
         else:
