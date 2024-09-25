@@ -13,6 +13,11 @@ def main(path: str):
     with open(path + 'answer.txt', 'w') as file:
         for i in range(1, 10001):
             file.writelines((str(random.randint(1, 10000))+'\n'))
+            
+
+    with open(path + 'answer.txt', 'r', encoding='cp1251') as file:
+        for i in file:
+            print(file.readline())
 
 
 if "__main__" == __name__:
