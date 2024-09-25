@@ -8,8 +8,11 @@
 
 import pickle
 import json
+import os
 
-def main():
+
+
+def main(path: str):
     internet_shop = [
     {
         "category": "toys",
@@ -38,12 +41,13 @@ def main():
     },
 ]
 
-    with open('data.pickle', 'wb') as file:
+    with open(path + 'data.pickle', 'wb') as file:
         pickle.dump('internet_shop', file)
 
-    with open('data_json.json', 'w') as file:
+    with open(path + 'data_json.json', 'w') as file:
         json.dump(internet_shop, file, indent = 2, ensure_ascii = False)
 
 
 if "__main__" == __name__:
-    main()
+    path = os.getcwd() + '/'
+    main(path)

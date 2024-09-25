@@ -7,12 +7,14 @@
 """
 
 import random
+import os
 
-def main():
-    with open('answer.txt', 'w') as file:
+def main(path: str):
+    with open(path + 'answer.txt', 'w') as file:
         for i in range(1, 10001):
             file.writelines((str(random.randint(1, 10000))+'\n'))
 
 
 if "__main__" == __name__:
-    main()
+    path = os.getcwd() + '/'
+    main(path)
